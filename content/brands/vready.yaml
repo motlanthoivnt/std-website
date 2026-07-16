@@ -1,0 +1,18 @@
+display_name: VREADY
+bullet: Trà thảo mộc từ dược liệu
+hero_image: hero-herbs.jpg
+description: >-
+  Với khát vọng về thảo mộc Việt Nam, cũng như cung cấp đến Người tiêu dùng
+  Việt Nam và Thế giới những giá trị từ thiên nhiên Việt Nam và những sản
+  phẩm ứng dụng từ thảo mộc vào đời sống theo cách gần gũi nhất, đáng tin
+  cậy nhất, chúng tôi đã hình thành ý tưởng và quyết tâm nghiên cứu phát
+  triển các loại trà sức khỏe Vready.
+products:
+  - image: prod-vready-bakich.jpg
+    name: Trà thảo mộc - ba kích
+  - image: prod-vready-perilla.jpg
+    name: Trà tía tô - perilla
+  - image: prod-vready-lactien.jpg
+    name: Trà thảo mộc - lạc tiên tây
+  - image: prod-vready-detox.jpg
+    name: Trà thảo mộc - detox

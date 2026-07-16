@@ -1,0 +1,18 @@
+display_name: OTVhitech
+bullet: Cung cấp, mua bán dược liệu Việt
+hero_image: hero-herbs.jpg
+description: >-
+  Với khát vọng về thảo mộc Việt Nam, cũng như cung cấp đến Người tiêu dùng
+  Việt Nam và Thế giới những giá trị từ thiên nhiên Việt Nam và những sản
+  phẩm ứng dụng từ thảo mộc vào đời sống theo cách gần gũi nhất, đáng tin
+  cậy nhất, chúng tôi đã hình thành ý tưởng và quyết tâm nghiên cứu phát
+  triển các loại trà sức khỏe Vready.
+products:
+  - image: prod-otv-actiso.jpg
+    name: OTV - Dược liệu Actiso
+  - image: prod-otv-bupgiam.jpg
+    name: OTV - Dược liệu bụp giấm
+  - image: prod-otv-dansam.jpg
+    name: OTV - Dược liệu đan sâm
+  - image: prod-otv-dangsam.jpg
+    name: OTV - Dược liệu đảng sâm

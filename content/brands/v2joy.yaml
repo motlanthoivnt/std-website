@@ -1,0 +1,18 @@
+display_name: V2JOY
+bullet: Thực phẩm chăm sóc sức khỏe nam giới
+hero_image: hero-handshake.jpg
+description: >-
+  Chất lượng là nền tảng! Chắt chịu, chọn lọc từ những dược liệu Việt Nam có
+  nguồn cung tốt nhất. Chúng tôi cố gắng làm nên những sản phẩm có độ tinh
+  khiết tối đa. Các sản phẩm của V2joy đều trải qua quá trình kiểm tra
+  nghiêm ngặt để xác minh các thành phần, mức độ hiệu quả và độ tinh khiết
+  của sản phẩm, an toàn với người sử dụng.
+products:
+  - image: prod-v2joy-wipes.jpg
+    name: V2JOY - MEN WIPES LOVE
+  - image: prod-v2joy-beforedrink.jpg
+    name: V2JOY - before drink
+  - image: prod-v2joy-2in1.jpg
+    name: V2JOY - 2 in 1 tắm và gội
+  - image: prod-v2joy-wipes2.jpg
+    name: V2JOY - MEN WIPES LOVE

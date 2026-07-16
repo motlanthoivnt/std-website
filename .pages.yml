@@ -1,0 +1,347 @@
+# Cấu hình Pages CMS (https://pagescms.org) cho website STD International.
+# Mỗi mục dưới đây tương ứng một trang / nhóm nội dung có thể chỉnh sửa.
+# Sau khi lưu, GitHub Action "Build site from content" sẽ tự dựng lại HTML.
+
+content:
+  - name: site
+    label: "⚙️ Thông tin chung công ty"
+    type: file
+    path: content/site.yaml
+    fields:
+      - name: company_name
+        label: Tên công ty (đầy đủ)
+        type: string
+      - name: short_name
+        label: Tên công ty (rút gọn, dùng ở dòng bản quyền)
+        type: string
+      - name: business_reg
+        label: Dòng giấy phép ĐKKD
+        type: text
+      - name: address
+        label: Địa chỉ
+        type: text
+      - name: phone
+        label: Số điện thoại
+        type: string
+      - name: email
+        label: Email
+        type: string
+
+  - name: home
+    label: "🏠 Trang chủ"
+    type: file
+    path: content/home.yaml
+    fields:
+      - name: hero_quote
+        label: Câu khẩu hiệu lớn (ảnh bìa)
+        type: text
+      - name: story_title
+        label: Tiêu đề "Chúng tôi là..."
+        type: text
+      - name: story_intro
+        label: Đoạn giới thiệu ngắn
+        type: text
+      - name: story_brands
+        label: Danh sách 3 nhãn hiệu
+        type: string
+        list: true
+      - name: sustain_intro
+        label: Đoạn giới thiệu "Phát triển bền vững"
+        type: text
+      - name: news_teaser
+        label: 3 tin tức nổi bật
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Ảnh
+            type: image
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: date
+            label: Ngày đăng
+            type: date
+
+  - name: about_index
+    label: "📄 Giới thiệu — 3 thẻ tổng quan"
+    type: file
+    path: content/about_index.yaml
+    fields:
+      - name: card_team_title
+        label: "Thẻ 1 — Tiêu đề (Đội ngũ nhân sự)"
+        type: text
+      - name: card_team_text
+        label: "Thẻ 1 — Nội dung"
+        type: text
+      - name: card_vision_title
+        label: "Thẻ 2 — Tiêu đề (Tầm nhìn sứ mệnh)"
+        type: text
+      - name: card_vision_text
+        label: "Thẻ 2 — Nội dung"
+        type: text
+      - name: card_customer_title
+        label: "Thẻ 3 — Tiêu đề (Đối với khách hàng)"
+        type: text
+      - name: card_customer_text
+        label: "Thẻ 3 — Nội dung"
+        type: text
+
+  - name: about_nhan_su
+    label: "📄 Giới thiệu — Đội ngũ nhân sự"
+    type: file
+    path: content/about/nhan-su.yaml
+    fields:
+      - name: lead
+        label: Đoạn mở đầu
+        type: text
+      - name: image
+        label: Ảnh minh hoạ
+        type: image
+      - name: body
+        label: Nội dung bài (mỗi đoạn cách nhau 1 dòng trống)
+        type: text
+
+  - name: about_tam_nhin
+    label: "📄 Giới thiệu — Tầm nhìn, sứ mệnh, giá trị cốt lõi"
+    type: file
+    path: content/about/tam-nhin.yaml
+    fields:
+      - name: lead
+        label: Đoạn mở đầu
+        type: text
+      - name: vision
+        label: Tầm nhìn
+        type: text
+      - name: mission
+        label: Sứ mệnh
+        type: text
+      - name: core_values
+        label: Giá trị cốt lõi
+        type: text
+
+  - name: about_khach_hang
+    label: "📄 Giới thiệu — Đối với khách hàng"
+    type: file
+    path: content/about/khach-hang.yaml
+    fields:
+      - name: title
+        label: Tiêu đề trang
+        type: string
+      - name: intro
+        label: Đoạn mở đầu
+        type: text
+      - name: actions
+        label: Danh sách hành động
+        type: text
+        list: true
+
+  - name: about_san_xuat
+    label: "📄 Giới thiệu — Cơ sở sản xuất"
+    type: file
+    path: content/about/san-xuat.yaml
+    fields:
+      - name: body
+        label: Nội dung bài (mỗi đoạn cách nhau 1 dòng trống)
+        type: text
+      - name: partner_logo
+        label: Logo đối tác sản xuất
+        type: image
+
+  - name: about_nghien_cuu
+    label: "📄 Giới thiệu — Nghiên cứu & phát triển"
+    type: file
+    path: content/about/nghien-cuu.yaml
+    fields:
+      - name: body
+        label: Nội dung bài (mỗi đoạn cách nhau 1 dòng trống)
+        type: text
+
+  - name: brands
+    label: "🏷️ Nhãn hiệu (V2JOY / VREADY / OTV)"
+    type: collection
+    path: content/brands
+    fields:
+      - name: display_name
+        label: Tên nhãn hiệu
+        type: string
+      - name: bullet
+        label: Dòng mô tả ngắn
+        type: string
+      - name: hero_image
+        label: Ảnh bìa
+        type: image
+      - name: description
+        label: Mô tả nhãn hiệu
+        type: text
+      - name: products
+        label: Danh sách sản phẩm
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Ảnh sản phẩm
+            type: image
+          - name: name
+            label: Tên sản phẩm
+            type: string
+
+  - name: sustain_index
+    label: "🌱 Phát triển bền vững — Trang tổng quan"
+    type: file
+    path: content/sustain_index.yaml
+    fields:
+      - name: intro
+        label: Đoạn giới thiệu
+        type: text
+      - name: card_culture_title
+        label: "Thẻ 1 — Tiêu đề (Văn hoá doanh nghiệp)"
+        type: text
+      - name: card_culture_text
+        label: "Thẻ 1 — Nội dung"
+        type: text
+      - name: card_strategy_title
+        label: "Thẻ 2 — Tiêu đề (Chiến lược con người)"
+        type: text
+      - name: card_strategy_text
+        label: "Thẻ 2 — Nội dung"
+        type: text
+      - name: card_environment_title
+        label: "Thẻ 3 — Tiêu đề (Môi trường & cộng đồng)"
+        type: text
+      - name: card_environment_text
+        label: "Thẻ 3 — Nội dung"
+        type: text
+
+  - name: sustain_van_hoa
+    label: "🌱 Phát triển bền vững — Văn hoá doanh nghiệp"
+    type: file
+    path: content/sustain/van-hoa.yaml
+    fields:
+      - name: lead
+        label: Đoạn mở đầu
+        type: text
+      - name: image
+        label: Ảnh minh hoạ
+        type: image
+      - name: body
+        label: Nội dung bài (mỗi đoạn cách nhau 1 dòng trống)
+        type: text
+
+  - name: sustain_chien_luoc
+    label: "🌱 Phát triển bền vững — Chiến lược con người"
+    type: file
+    path: content/sustain/chien-luoc.yaml
+    fields:
+      - name: lead
+        label: Đoạn mở đầu
+        type: text
+      - name: image
+        label: Ảnh minh hoạ
+        type: image
+      - name: body
+        label: Nội dung bài (mỗi đoạn cách nhau 1 dòng trống)
+        type: text
+
+  - name: sustain_moi_truong
+    label: "🌱 Phát triển bền vững — Môi trường & cộng đồng"
+    type: file
+    path: content/sustain/moi-truong.yaml
+    fields:
+      - name: lead
+        label: Đoạn mở đầu
+        type: text
+      - name: band_title
+        label: "Dải cam — Tiêu đề"
+        type: text
+      - name: band_sub
+        label: "Dải cam — Mô tả"
+        type: text
+      - name: band_image
+        label: "Dải cam — Ảnh"
+        type: image
+      - name: after
+        label: Đoạn kết
+        type: text
+
+  - name: news
+    label: "📰 Tin tức & Thông báo"
+    type: file
+    path: content/news.yaml
+    fields:
+      - name: notices
+        label: Thông báo (công bố sản phẩm...)
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Ảnh
+            type: image
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: date
+            label: Ngày đăng
+            type: date
+      - name: articles
+        label: Tin tức & truyền thông
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Ảnh
+            type: image
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: date
+            label: Ngày đăng
+            type: date
+
+  - name: jobs
+    label: "💼 Tuyển dụng"
+    type: file
+    path: content/jobs.yaml
+    fields:
+      - name: lead
+        label: Đoạn mô tả đầu trang
+        type: text
+      - name: postings
+        label: Danh sách tin tuyển dụng
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Ảnh
+            type: image
+          - name: title
+            label: Tiêu đề
+            type: string
+          - name: date
+            label: Ngày đăng
+            type: date
+
+  - name: contact
+    label: "☎️ Liên hệ"
+    type: file
+    path: content/contact.yaml
+    fields:
+      - name: intro
+        label: Đoạn mở đầu
+        type: text
+      - name: hotline_note
+        label: Câu dẫn trước số hotline
+        type: text
+      - name: hotline
+        label: Số hotline
+        type: string
+      - name: map_image
+        label: Ảnh bản đồ
+        type: image
+      - name: form_note
+        label: Ghi chú dưới form liên hệ
+        type: text
+
+media:
+  input: assets/img
+  output: /assets/img

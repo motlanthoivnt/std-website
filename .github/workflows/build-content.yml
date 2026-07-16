@@ -1,0 +1,46 @@
+name: Build site from content
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - 'tools/**'
+      - '.pages.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-content-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r tools/requirements.txt
+
+      - name: Build HTML from content
+        run: python tools/build.py
+
+      - name: Commit and push regenerated pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add '*.html'
+          if git diff --staged --quiet; then
+            echo "No HTML changes to commit"
+          else
+            git commit -m "chore: rebuild site from content [skip ci]"
+            git push
+          fi
